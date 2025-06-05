@@ -1,0 +1,82 @@
+﻿<Page x:Class="YORDER.Views.Pages.NewOrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:YORDER.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="584" d:DesignWidth="769"
+      Title="NewOrderPage" Background="#FF7F7F7F">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Новый заказ" HorizontalAlignment="Left" Foreground="White" FontSize="30"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Text="Заказчик:" Foreground="White"/>
+            <Border Width="10"/>
+            <TextBox Name="NameTb"/>
+            <Border Width="20"/>
+            <TextBlock Text="Телефон:" Foreground="White"/>
+            <Border Width="10"/>
+            <TextBox Name="PhoneTb"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Text="Материалы:" Foreground="White"/>
+            <Border Width="10"/>
+            <TextBox Name="MaterialsTb" Width="500"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <TextBlock Text="Эскизы:" Foreground="White"/>
+            <Border Width="10"/>
+            <StackPanel Margin="0,10,0,0" VerticalAlignment="Center">
+                <Button Name="SelectFileBtn" Content="Выбрать файл" Click="SelectFileBtn_Click"/>
+                <TextBlock x:Name="FileNameTb" HorizontalAlignment="Center" Foreground="White" FontSize="14"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal">
+            <TextBlock Text="Сроки изготовления:" Foreground="White"/>
+            <Border Width="10"/>
+            <DatePicker Name="StartDateDp"/>
+            <Border Width="10"/>
+            <DatePicker Name="EndDateDp"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal">
+            <TextBlock Text="Описание:" Foreground="White"/>
+            <Border Width="10"/>
+            <TextBox Name="DescriptionTb" Width="500"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" Orientation="Horizontal">
+            <TextBlock Text="Адрес:" Foreground="White"/>
+            <Border Width="10"/>
+            <TextBox Name="AdressTb" Width="500"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="7" Orientation="Horizontal">
+            <TextBlock Text="Способ оплаты:" Foreground="White"/>
+            <Border Width="10"/>
+            <ComboBox Name="PaymentMethodCmb" Width="200"/>
+            <Border Width="10"/>
+            <TextBlock Text="Сумма:" Foreground="White"/>
+            <Border Width="10"/>
+            <TextBox Name="AmountTb" Width="200"/>
+        </StackPanel>
+
+        <Button Name="SaveBtn" Content="Сохранить" Click="SaveBtn_Click" Grid.Row="8" Style="{StaticResource Btn}"/>
+    </Grid>
+</Page>

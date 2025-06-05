@@ -1,0 +1,39 @@
+﻿<Window x:Class="YORDER.Views.Windows.AuthorisationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YORDER.Views.Windows"
+        mc:Ignorable="d"
+        Title="Окно авторизации" 
+        Height="600" Width="1000" WindowStartupLocation="CenterScreen" Background="#FF7F7F7F">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".3*" />
+            <RowDefinition Height=".07*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="50 0 0 0">
+            <TextBlock Text="YORDER" FontSize="45" />
+            <StackPanel Margin="550 0 0 0" VerticalAlignment="Center">
+                <TextBlock Text="тех.поддержка" Foreground="White" HorizontalAlignment="Left"/>
+                <TextBlock Text="+7(987)654-32-10" Foreground="#FFFF9705" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Border Grid.Row="1" Background="#FFFF9705"/>
+
+        <Border Grid.Row="2" BorderThickness="2" BorderBrush="Black" CornerRadius="20" Margin="200 50">
+            <StackPanel Margin="20 30">
+                <TextBlock Text="вход" Foreground="White" FontSize="30"/>
+                <Border Height="10"/>
+                <TextBox Name="LoginTb" Text="логин" Foreground="White" Padding="5 0"  Style="{StaticResource LoginTb}"/>
+                <Border Height="10"/>
+                <PasswordBox Name="PasswordPb" Password="password" Foreground="White" Padding="5 0"/>
+                <Border Height="20"/>
+                <Button Name="EntryBtn" Content="войти" Click="EntryBtn_Click" Style="{StaticResource LoginBtn}"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

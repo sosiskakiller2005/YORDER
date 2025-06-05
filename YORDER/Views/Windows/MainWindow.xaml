@@ -1,0 +1,41 @@
+﻿<Window x:Class="YORDER.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YORDER"
+        mc:Ignorable="d"
+        Title="YORDER"
+        Height="600" Width="1000" WindowStartupLocation="CenterScreen" Background="#FF7F7F7F">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="#FF7F7F7F">
+          <TextBlock Text="Заказы" Foreground="White" HorizontalAlignment="Left" Margin="10 20 0 0" FontSize="30"/>
+            <Border Height="30"/>
+            <TextBlock Foreground="White" HorizontalAlignment="Left" Margin="10 0 0 0">
+                <Hyperlink Name="AllOrdersHl" Click="AllOrdersHl_Click"><TextBlock Name="OrdersCountTbl">Все (20)</TextBlock></Hyperlink>
+            </TextBlock>
+            <Border Height="10"/>
+            <TextBlock Foreground="White" HorizontalAlignment="Left" Margin="10 0 0 0">
+                <Hyperlink Name="NewOrdersHl" Click="NewOrdersHl_Click">Новые</Hyperlink>
+            </TextBlock>
+            <Border Height="10"/>
+            <TextBlock Foreground="White" HorizontalAlignment="Left" Margin="10 0 0 0">
+                <Hyperlink Name="WIPOrdersHL" Click="WIPOrdersHL_Click">Запущенные</Hyperlink>
+            </TextBlock>
+            <Border Height="10"/>
+            <TextBlock Foreground="White" HorizontalAlignment="Left" Margin="10 0 0 0">
+                <Hyperlink Name="FinishedOrdersHl" Click="FinishedOrdersHl_Click">Готовые</Hyperlink>
+            </TextBlock>
+            <Border Height="30"/>
+            <Button Name="NewOrderBtn" Content="Создать заказ" Click="NewOrderBtn_Click" Style="{StaticResource Btn}"/>
+        </StackPanel>
+
+        <Border Grid.Column="1" />
+        <Frame Name="MainFrm" Grid.Column="1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
