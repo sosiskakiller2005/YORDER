@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:YORDER"
         mc:Ignorable="d"
         Title="YORDER"
-        Height="600" Width="1000" WindowStartupLocation="CenterScreen" Background="#FF7F7F7F">
+        Height="600" Width="1100" WindowStartupLocation="CenterScreen" Background="#FF7F7F7F">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".3*" />

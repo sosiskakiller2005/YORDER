@@ -83,6 +83,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AppData\AuthorisationHelper.cs" />
+    <Compile Include="AppData\BoolToVisibilityConverter.cs" />
     <Compile Include="AppData\FrameHelper.cs" />
     <Compile Include="AppData\MessageBoxHelper.cs" />
     <Compile Include="Views\Pages\NewOrderPage.xaml.cs">
@@ -204,6 +205,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\Fonts\Jura-VariableFont_wght.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -219,12 +221,11 @@
       <DependentUpon>YorderModel.edmx</DependentUpon>
       <LastGenOutput>YorderModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

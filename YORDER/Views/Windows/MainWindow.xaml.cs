@@ -23,17 +23,18 @@ namespace YORDER
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static YORDERDbEntities _context = App.GetContext();
         public MainWindow()
         {
             InitializeComponent();
             FrameHelper.selectedFrame = MainFrm;
             MainFrm.Navigate(new OrdersPage());
-
+            OrdersCountTbl.Text = $"Все ({_context.Order.Count().ToString()})";
         }
 
         private void NewOrdersHl_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrm.Navigate(new OrdersPage(_context.Status.First(s => s.Id == 1)));
         }
 
         private void AllOrdersHl_Click(object sender, RoutedEventArgs e)
@@ -43,12 +44,12 @@ namespace YORDER
 
         private void WIPOrdersHL_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrm.Navigate(new OrdersPage(_context.Status.First(s => s.Id == 2)));
         }
 
         private void FinishedOrdersHl_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrm.Navigate(new OrdersPage(_context.Status.First(s => s.Id == 3)));
         }
 
         private void NewOrderBtn_Click(object sender, RoutedEventArgs e)

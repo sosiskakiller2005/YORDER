@@ -34,5 +34,17 @@ namespace YORDER.Views.Windows
                 Close();
             }
         }
+
+        private void SignUpHl_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PasswordPb_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            PasswordPlaceholder.Visibility = string.IsNullOrEmpty(PasswordPb.Password)
+                ? Visibility.Visible
+                : Visibility.Collapsed;
+        }
     }
 }

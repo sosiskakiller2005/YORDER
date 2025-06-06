@@ -27,5 +27,12 @@ namespace YORDER.Views.Pages
             InitializeComponent();
             OrdersLv.ItemsSource = _context.Order.ToList();
         }
+
+        public OrdersPage(Status selectedStatus)
+        {
+            InitializeComponent();
+            int statusId = selectedStatus.Id;
+            OrdersLv.ItemsSource = _context.Order.Where(o => o.Status.Id == statusId).ToList();
+        }
     }
 }

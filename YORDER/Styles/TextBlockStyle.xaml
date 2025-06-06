@@ -1,9 +1,10 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style TargetType="TextBlock">
-        <Setter Property="FontSize" Value="22" />
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="FontWeight" Value="Normal" />
-    </Style>
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">  
+   <Style TargetType="TextBlock">  
+       <Setter Property="FontSize" Value="22" />  
+       <Setter Property="VerticalAlignment" Value="Center" />  
+       <Setter Property="HorizontalAlignment" Value="Center" />  
+       <Setter Property="FontWeight" Value="Normal" />  
+       <Setter Property="FontFamily" Value="pack://application:,,,/YORDER;component/Resources/Fonts/Jura-VariableFont_wght.ttf#Jura" />  
+   </Style>  
 </ResourceDictionary>

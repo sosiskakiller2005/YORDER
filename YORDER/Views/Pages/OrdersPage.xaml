@@ -10,7 +10,6 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height=".3*" />
             <RowDefinition Height=".03*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>

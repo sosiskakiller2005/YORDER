@@ -3,10 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:YORDER.Views.Windows"
+        xmlns:local="clr-namespace:YORDER.AppData"
         mc:Ignorable="d"
         Title="Окно авторизации" 
         Height="600" Width="1000" WindowStartupLocation="CenterScreen" Background="#FF7F7F7F">
+    <Window.Resources>
+        <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height=".3*" />
@@ -15,8 +18,9 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Margin="50 0 0 0">
+            <Image Source="/Resources/logo.png" Margin="20"/>
             <TextBlock Text="YORDER" FontSize="45" />
-            <StackPanel Margin="550 0 0 0" VerticalAlignment="Center">
+            <StackPanel Margin="450 0 0 0" VerticalAlignment="Center">
                 <TextBlock Text="тех.поддержка" Foreground="White" HorizontalAlignment="Left"/>
                 <TextBlock Text="+7(987)654-32-10" Foreground="#FFFF9705" HorizontalAlignment="Left"/>
             </StackPanel>
@@ -28,12 +32,39 @@
             <StackPanel Margin="20 30">
                 <TextBlock Text="вход" Foreground="White" FontSize="30"/>
                 <Border Height="10"/>
-                <TextBox Name="LoginTb" Text="логин" Foreground="White" Padding="5 0"  Style="{StaticResource LoginTb}"/>
+                <!-- LoginTb с плейсхолдером -->
+                <!-- LoginTb с плейсхолдером -->
+                <Grid>
+                    <TextBox Name="LoginTb" Foreground="White" Padding="5 0" Style="{StaticResource LoginTb}" />
+                    <TextBlock Text="логин"
+               Foreground="Gray"
+               Margin="8,0,0,0"
+               VerticalAlignment="Center"
+               IsHitTestVisible="False"
+               Visibility="{Binding Text, ElementName=LoginTb, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                </Grid>
                 <Border Height="10"/>
-                <PasswordBox Name="PasswordPb" Password="password" Foreground="White" Padding="5 0"/>
+                <!-- PasswordPb с плейсхолдером -->
+                <Grid>
+                    <PasswordBox Name="PasswordPb" Foreground="White" Padding="5 0"
+                 PasswordChanged="PasswordPb_PasswordChanged"/>
+                    <TextBlock x:Name="PasswordPlaceholder"
+               Text="пароль"
+               Foreground="Gray"
+               Margin="8,0,0,0"
+               VerticalAlignment="Center"
+               IsHitTestVisible="False"
+               Visibility="Visible"/>
+                </Grid>
+
                 <Border Height="20"/>
                 <Button Name="EntryBtn" Content="войти" Click="EntryBtn_Click" Style="{StaticResource LoginBtn}"/>
+                <Border Height="10"/>
+                <TextBlock>
+        <Hyperlink Name="SignUpHl" Click="SignUpHl_Click">Зарегистрироватся</Hyperlink>
+                </TextBlock>
             </StackPanel>
+
         </Border>
     </Grid>
 </Window>
